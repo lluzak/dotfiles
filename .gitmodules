@@ -1,0 +1,63 @@
+[submodule "vim/bundle/figitive"]
+	path = vim/bundle/figitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/rails.vim"]
+	path = vim/bundle/rails.vim
+	url = git://github.com/tpope/vim-rails.git
+[submodule "vim/bundle/bundler.vim"]
+	path = vim/bundle/bundler.vim
+	url = git://github.com/tpope/vim-bundler.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/bundle/rbenv.vim"]
+	path = vim/bundle/rbenv.vim
+	url = git://github.com/tpope/vim-rbenv.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "vim/bundle/surround.vim"]
+	path = vim/bundle/surround.vim
+	url = git://github.com/tpope/vim-surround.git
+[submodule "vim/bundle/solarized.vim"]
+	path = vim/bundle/solarized.vim
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/haml.vim"]
+	path = vim/bundle/haml.vim
+	url = https://github.com/tpope/vim-haml.git
+[submodule "vim/bundle/coffee.vim"]
+	path = vim/bundle/coffee.vim
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "vim/bundle/ruby.vim"]
+	path = vim/bundle/ruby.vim
+	url = git@github.com:vim-ruby/vim-ruby.git
+[submodule "vim/bundle/sleuth.vim"]
+	path = vim/bundle/sleuth.vim
+	url = git://github.com/tpope/vim-sleuth.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/endwise"]
+	path = vim/bundle/endwise
+	url = git://github.com/tpope/vim-endwise.git
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = git@github.com:mileszs/ack.vim.git
+[submodule "vim/bundle/html5"]
+	path = vim/bundle/html5
+	url = git@github.com:othree/html5.vim.git
+[submodule "vim/bundle/vroom"]
+	path = vim/bundle/vroom
+	url = git@github.com:skalnik/vim-vroom.git
+[submodule "vim/bundle/vimux"]
+	path = vim/bundle/vimux
+	url = git@github.com:benmills/vimux.git
+[submodule "vim/bundle/snipmate"]
+	path = vim/bundle/snipmate
+	url = git://github.com/msanders/snipmate.vim.git

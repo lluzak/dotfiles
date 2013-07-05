@@ -1,0 +1,18 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
+[core]
+  editor = vim
+[color]
+	ui = true
+[user]
+	email = lluzak@gmail.com
+	name = Przemek Lusar
+[credential]
+	helper = cache
+[push]
+	default = current
