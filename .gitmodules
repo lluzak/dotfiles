@@ -58,3 +58,6 @@
 [submodule "vim/bundle/vimux"]
 	path = vim/bundle/vimux
 	url = git@github.com:benmills/vimux.git
+[submodule "vim/bundle/vim.snipmate"]
+	path = vim/bundle/vim.snipmate
+	url = git@github.com:ervandew/snipmate.vim.git
