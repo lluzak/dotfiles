@@ -240,9 +240,14 @@ else
         set term=gnome-256color
         colorscheme molokai
     else
-        if $TERM == 'xterm'
+        if $TERM == 'xterm-256color' || $TERM == 'xterm'
             set term=xterm-256color
             colorscheme molokai
+            " Disable Background Color Erase (BCE) so that color schemes
+            " work properly when Vim is used inside tmux and GNU screen.
+            " See also
+            " http://snk.tuxfamily.org/log/vim-256color-bce.html
+            set t_ut=
         else
             colorscheme default
         endif

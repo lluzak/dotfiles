@@ -58,9 +58,8 @@ export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 export EDITOR=vim
 
 # Tmux
-alias tmux="TERM=screen-256color-bce tmux -2"
+alias tmux="TERM=xterm-256color tmux -2"
 
-# Ruby GC settings
-export RUBY_GC_MALLOC_LIMIT=1000000000
-export RUBY_FREE_MIN=500000
-export RUBY_HEAP_MIN_SLOTS=40000
+# GO Paths
+export GOPATH=$HOME/work/go
+export PATH=$HOME/work/go/bin:$PATH
