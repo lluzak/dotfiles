@@ -368,7 +368,7 @@ endif
 autocmd vimenter * NERDTree
 
 "Copy to clipboard
-vmap <Space>v "+y
+vmap <Space>c "+y
 map <Space>v "+p
 
 set fileencodings=utf-8
