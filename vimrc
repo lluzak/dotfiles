@@ -388,3 +388,6 @@ colorscheme molokai
 
 " Vroom config
 let g:vroom_use_vimux=1
+
+"enable spellchecker on git commit files
+autocmd Filetype gitcommit setlocal spell textwidth=72
