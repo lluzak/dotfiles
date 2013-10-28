@@ -391,3 +391,6 @@ let g:vroom_use_vimux=1
 
 "enable spellchecker on git commit files
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+"set ctags default files
+set tags=tags,./tags,gems.tags,./gems.tags
