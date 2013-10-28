@@ -1,5 +1,5 @@
 function fnd() {
-  grep --exclude-dir ".svn,.git" -nr "$1" *
+  grep --exclude-dir ".svn,.git" -nri "$1" *
 }
 
 function dus() {
