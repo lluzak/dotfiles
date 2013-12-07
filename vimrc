@@ -382,6 +382,7 @@ set timeout timeoutlen=500 ttimeoutlen=100
 
 "set filetype for hamlc
 au BufRead,BufNewFile *.hamlc set ft=haml
+au BufRead,BufNewFile *.rtb set ft=ruby
 
 "set filetype for rtb (prown gem)
 au BufRead,BufNewFile *.rtb set ft=ruby
