@@ -5,6 +5,7 @@
 	st = status
 	unstage = reset HEAD --
 	last = log -1 HEAD
+	undo-commit = reset --soft HEAD^
 [core]
   editor = vim
 [color]
