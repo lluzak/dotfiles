@@ -398,3 +398,7 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 
 "set ctags default files
 set tags=tags,./tags,gems.tags,./gems.tags
+
+" Easy align plugin
+vmap <Enter> <Plug>(EasyAlign)
+nmap <Leader> <Plug>(EasyAlign)
