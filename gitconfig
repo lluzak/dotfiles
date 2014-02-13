@@ -7,7 +7,7 @@
 	last = log -1 HEAD
 	undo-commit = reset --soft HEAD^
 [core]
-  editor = vim
+	editor = vim
 [color]
 	ui = true
 [user]
