@@ -18,3 +18,5 @@
 	helper = cache
 [push]
 	default = current
+[branch]
+	autosetuprebase = always
