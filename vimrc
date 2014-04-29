@@ -238,10 +238,11 @@ else
     "set railscasts colorscheme when running vim in gnome terminal
     if $COLORTERM == 'gnome-terminal'
         set term=gnome-256color
+        set t_ut=
         colorscheme molokai
     else
-        if $TERM == 'xterm-256color' || $TERM == 'xterm'
-            set term=xterm-256color
+        if $TERM == 'screen-256color' || $TERM == 'screen'
+            set term=screen-256color
             colorscheme molokai
             " Disable Background Color Erase (BCE) so that color schemes
             " work properly when Vim is used inside tmux and GNU screen.

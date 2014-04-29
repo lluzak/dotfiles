@@ -58,7 +58,7 @@ export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/
 export EDITOR=vim
 
 # Tmux
-alias tmux="TERM=xterm-256color tmux -2"
+alias tmux="tmux -2"
 
 # Chrome with disable web security
 alias dev_chrome="google-chrome --args=\"--disable-web-security\""
@@ -66,3 +66,6 @@ alias dev_chrome="google-chrome --args=\"--disable-web-security\""
 # GO Paths
 export GOPATH=$HOME/work/go
 export PATH=$HOME/work/go/bin:$PATH
+
+# Set TERM variable
+export TERM=xterm-256color
