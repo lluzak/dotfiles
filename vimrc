@@ -4,6 +4,7 @@ filetype off
 
 "load pathgen managed plugins
 execute pathogen#infect()
+Helptags
 
 "Use Vim settings, rather then Vi settings (much better!).
 "This must be first, because it changes other options as a side effect.
@@ -214,7 +215,7 @@ if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
 
-    colorscheme molokai
+    colorscheme solarized
     set guitablabel=%M%t
     set lines=40
     set columns=115
@@ -235,15 +236,19 @@ if has("gui_running")
         set enc=utf-8
     endif
 else
-    "set railscasts colorscheme when running vim in gnome terminal
     if $COLORTERM == 'gnome-terminal'
         set term=gnome-256color
         set t_ut=
-        colorscheme molokai
+        colorscheme solarized
     else
+        if $TERM == 'xterm-256color' || $TERM == 'xterm'
+            set t_Co=256
+            colorscheme solarized
+            set background=dark
+        endif
         if $TERM == 'screen-256color' || $TERM == 'screen'
             set term=screen-256color
-            colorscheme molokai
+            colorscheme solarized
             " Disable Background Color Erase (BCE) so that color schemes
             " work properly when Vim is used inside tmux and GNU screen.
             " See also
@@ -388,9 +393,6 @@ au BufRead,BufNewFile *.rtb set ft=ruby
 "set filetype for rtb (prown gem)
 au BufRead,BufNewFile *.rtb set ft=ruby
 
-"set default colorscheme
-colorscheme molokai
-
 " Vroom config
 let g:vroom_use_vimux=1
 
@@ -403,3 +405,12 @@ set tags=tags,./tags,gems.tags,./gems.tags
 " Easy align plugin
 vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader> <Plug>(EasyAlign)
+
+" set colorscheme
+colorscheme solarized
+set background=dark
+
+" Airline configuration
+let g:airline_theme="solarized"
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tmuxline#enabled = 0
