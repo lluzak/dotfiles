@@ -69,3 +69,5 @@ export PATH=$HOME/work/go/bin:$PATH
 
 # Set TERM variable
 export TERM=xterm-256color
+
+[ -s "/home/przemek/.nvm/nvm.sh" ] && . "/home/przemek/.nvm/nvm.sh" # This loads nvm
