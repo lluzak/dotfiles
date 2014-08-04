@@ -63,11 +63,16 @@ alias tmux="tmux -2"
 # Chrome with disable web security
 alias dev_chrome="google-chrome --args=\"--disable-web-security\""
 
-# GO Paths
-export GOPATH=$HOME/work/go
-export PATH=$HOME/work/go/bin:$PATH
-
 # Set TERM variable
 export TERM=xterm-256color
 
 [ -s "/home/przemek/.nvm/nvm.sh" ] && . "/home/przemek/.nvm/nvm.sh" # This loads nvm
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+# GO Paths
+export GOPATH=$HOME/code/go
+export PATH=$HOME/code/go/bin:$PATH
