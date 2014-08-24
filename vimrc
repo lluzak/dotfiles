@@ -415,8 +415,8 @@ let g:airline_theme="badwolf"
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tmuxline#enabled = 0
 
-let g:indent_guides_guide_size=1
+let g:indent_guides_guide_size=2
 let g:indent_guides_start_level=2
-"let g:indent_guides_auto_colors = 0
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black   ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=darkgrey

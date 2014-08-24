@@ -20,3 +20,5 @@
 	default = current
 [branch]
 	autosetuprebase = always
+[github]
+	user = lluzak@gmail.com
