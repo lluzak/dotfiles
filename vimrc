@@ -237,18 +237,18 @@ if has("gui_running")
     endif
 else
     if $COLORTERM == 'gnome-terminal'
-        set term=gnome-256color
+        " set term=gnome-256color
         set t_ut=
-        colorscheme solarized
+        colorscheme molokai
     else
         if $TERM == 'xterm-256color' || $TERM == 'xterm'
             set t_Co=256
-            colorscheme solarized
-            set background=dark
+            colorscheme molokai
+            " set background=dark
         endif
         if $TERM == 'screen-256color' || $TERM == 'screen'
             set term=screen-256color
-            colorscheme solarized
+            colorscheme molokai
             " Disable Background Color Erase (BCE) so that color schemes
             " work properly when Vim is used inside tmux and GNU screen.
             " See also
@@ -407,11 +407,11 @@ vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader> <Plug>(EasyAlign)
 
 " set colorscheme
-colorscheme solarized
-set background=dark
+colorscheme molokai
+" set background=dark
 
 " Airline configuration
-let g:airline_theme="solarized"
+let g:airline_theme="badwolf"
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tmuxline#enabled = 0
 
