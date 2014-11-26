@@ -1,4 +1,4 @@
-install: install-packages install-vim install-zsh install-rubygems install-submodules install-tmux install-git install-rbenv install-ruby-build install-zsh-plugins
+install: install-packages install-vim install-zsh install-rubygems install-submodules install-tmux install-git install-rbenv install-ruby-build install-zsh-plugins install-nvm
 
 install-packages:
 	sudo apt-get install -y zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libpq-dev postgresql-9.3
@@ -7,6 +7,9 @@ install-packages:
 install-submodules:
 	git submodule init
 	git submodule update
+
+install-nvm:
+	curl https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | bash
 
 install-vim:
 	hg clone https://vim.googlecode.com/hg/ ~/vim

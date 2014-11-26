@@ -66,7 +66,8 @@ alias dev_chrome="google-chrome --args=\"--disable-web-security\""
 # Set TERM variable
 export TERM=xterm-256color
 
-[ -s "/home/przemek/.nvm/nvm.sh" ] && . "/home/przemek/.nvm/nvm.sh" # This loads nvm
+# This loads nvm
+[ -s "/home/przemek/.nvm/nvm.sh" ] && . "/home/przemek/.nvm/nvm.sh"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -76,3 +77,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # GO Paths
 export GOPATH=$HOME/code/go
 export PATH=$HOME/code/go/bin:$PATH
+
+### Node.js
+export NODE_PATH=./:$NODE_PATH
