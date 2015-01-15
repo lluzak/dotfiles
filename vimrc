@@ -417,6 +417,3 @@ let g:airline#extensions#tmuxline#enabled = 1
 
 " CTags
 nnoremap <leader>. :CtrlPTag<cr>
-
-" IndentLine
-let g:indentLine_char = '︙'
