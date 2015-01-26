@@ -417,3 +417,6 @@ let g:airline#extensions#tmuxline#enabled = 1
 
 " CTags
 nnoremap <leader>. :CtrlPTag<cr>
+
+" Max syntax
+set synmaxcol=120
