@@ -420,3 +420,6 @@ nnoremap <leader>. :CtrlPTag<cr>
 
 " Max syntax
 set synmaxcol=120
+
+" Disable syntastic javascript checker
+let g:syntastic_javascript_checkers = ['']
