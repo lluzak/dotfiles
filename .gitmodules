@@ -100,3 +100,9 @@
 [submodule "vim/bundle/indentLine"]
 	path = vim/bundle/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
+[submodule "vim/bundle/yajs"]
+	path = vim/bundle/yajs
+	url = git@github.com:othree/yajs.vim.git
+[submodule "vim/bundle/js-syntax"]
+	path = vim/bundle/js-syntax
+	url = git@github.com:othree/javascript-libraries-syntax.vim.git
