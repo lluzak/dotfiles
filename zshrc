@@ -11,8 +11,7 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="gentoo"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
+# Example aliases # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
@@ -80,3 +79,10 @@ export PATH=$HOME/code/go/bin:$PATH
 
 ### Node.js
 export NODE_PATH=./:$NODE_PATH
+
+### Android SDK
+export PATH="/home/przemek/Android/Sdk/platform-tools:$PATH"
+export PATH="/home/przemek/Android/Sdk/tools:$PATH"
+
+### nw.js
+export PATH="/home/przemek/.nw:$PATH"
