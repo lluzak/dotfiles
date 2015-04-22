@@ -370,8 +370,8 @@ if has("balloon_eval")
     set noballooneval
 endif
 
-"open NerdTree on vim start
-autocmd vimenter * NERDTree
+" open NerdTree on vim start
+" autocmd vimenter * NERDTree
 
 "Copy to clipboard
 vmap <Space>c "+y
