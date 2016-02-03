@@ -245,6 +245,7 @@ else
             set t_Co=256
             colorscheme molokai
             " set background=dark
+            set t_ut=
         endif
         if $TERM == 'screen-256color' || $TERM == 'screen'
             set term=screen-256color
@@ -419,7 +420,10 @@ let g:airline#extensions#tmuxline#enabled = 1
 nnoremap <leader>. :CtrlPTag<cr>
 
 " Max syntax
-set synmaxcol=120
+" set synmaxcol=120
 
 " Disable syntastic javascript checker
 let g:syntastic_javascript_checkers = ['']
+
+" ES6 files
+au BufRead,BufNewFile *.es6 set ft=javascript

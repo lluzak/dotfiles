@@ -24,7 +24,7 @@ ZSH_THEME="gentoo"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -33,7 +33,7 @@ ZSH_THEME="gentoo"
 # DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="false"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
@@ -43,7 +43,7 @@ COMPLETION_WAITING_DOTS="false"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git hg bundler prog_helper git-flow)
+plugins=(git git-flow)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -63,10 +63,10 @@ alias tmux="tmux -2"
 alias dev_chrome="google-chrome --args=\"--disable-web-security\""
 
 # Set TERM variable
-export TERM=xterm-256color
+# export TERM=screen-256color
 
 # This loads nvm
-[ -s "/home/przemek/.nvm/nvm.sh" ] && . "/home/przemek/.nvm/nvm.sh"
+[[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -80,9 +80,9 @@ export PATH=$HOME/code/go/bin:$PATH
 ### Node.js
 export NODE_PATH=./:$NODE_PATH
 
-### Android SDK
-export PATH="/home/przemek/Android/Sdk/platform-tools:$PATH"
-export PATH="/home/przemek/Android/Sdk/tools:$PATH"
-
 ### nw.js
 export PATH="/home/przemek/.nw:$PATH"
+
+## Adnroid SDK for OSX
+export ANDROID_HOME="/usr/local/Cellar/android-sdk/24.3.3"
+export ANDROID_SDK="/usr/local/Cellar/android-sdk/24.3.3"

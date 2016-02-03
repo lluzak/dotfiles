@@ -3,10 +3,10 @@
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/rails.vim"]
 	path = vim/bundle/rails.vim
-	url = git://github.com/tpope/vim-rails.git
+	url = https://github.com/tpope/vim-rails.git
 [submodule "vim/bundle/bundler.vim"]
 	path = vim/bundle/bundler.vim
-	url = git://github.com/tpope/vim-bundler.git
+	url = https://github.com/tpope/vim-bundler.git
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -15,16 +15,16 @@
 	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "vim/bundle/rbenv.vim"]
 	path = vim/bundle/rbenv.vim
-	url = git://github.com/tpope/vim-rbenv.git
+	url = https://github.com/tpope/vim-rbenv.git
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
 [submodule "vim/bundle/surround.vim"]
 	path = vim/bundle/surround.vim
-	url = git://github.com/tpope/vim-surround.git
+	url = https://github.com/tpope/vim-surround.git
 [submodule "vim/bundle/solarized.vim"]
 	path = vim/bundle/solarized.vim
-	url = git://github.com/altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
@@ -36,49 +36,49 @@
 	url = https://github.com/kchmck/vim-coffee-script.git
 [submodule "vim/bundle/ruby.vim"]
 	path = vim/bundle/ruby.vim
-	url = git@github.com:vim-ruby/vim-ruby.git
+	url = https://github.com/vim-ruby/vim-ruby.git
 [submodule "vim/bundle/sleuth.vim"]
 	path = vim/bundle/sleuth.vim
-	url = git://github.com/tpope/vim-sleuth.git
+	url = https://github.com/tpope/vim-sleuth.git
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
 [submodule "vim/bundle/endwise"]
 	path = vim/bundle/endwise
-	url = git://github.com/tpope/vim-endwise.git
+	url = https://github.com/tpope/vim-endwise.git
 [submodule "vim/bundle/html5"]
 	path = vim/bundle/html5
-	url = git@github.com:othree/html5.vim.git
+	url = https://github.com/othree/html5.vim.git
 [submodule "vim/bundle/vroom"]
 	path = vim/bundle/vroom
-	url = git@github.com:skalnik/vim-vroom.git
+	url = https://github.com/skalnik/vim-vroom.git
 [submodule "vim/bundle/vimux"]
 	path = vim/bundle/vimux
-	url = git@github.com:benmills/vimux.git
+	url = https://github.com/benmills/vimux.git
 [submodule "vim/bundle/vim.snipmate"]
 	path = vim/bundle/vim.snipmate
-	url = git@github.com:ervandew/snipmate.vim.git
+	url = https://github.com/ervandew/snipmate.vim.git
 [submodule "vim/bundle/jade.vim"]
 	path = vim/bundle/jade.vim
-	url = git://github.com/digitaltoad/vim-jade.git
+	url = https://github.com/digitaltoad/vim-jade.git
 [submodule "vim/bundle/golang"]
 	path = vim/bundle/golang
-	url = git@github.com:jnwhiteh/vim-golang.git
+	url = https://github.com/jnwhiteh/vim-golang.git
 [submodule "vim/bundle/handlebars"]
 	path = vim/bundle/handlebars
-	url = git://github.com/nono/vim-handlebars.git
+	url = https://github.com/nono/vim-handlebars.git
 [submodule "vim/bundle/mustache.vim"]
 	path = vim/bundle/mustache.vim
-	url = git://github.com/mustache/vim-mode.git
+	url = https://github.com/mustache/vim-mode.git
 [submodule "vim/bundle/vim-easy-align"]
 	path = vim/bundle/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align.git
 [submodule "vim/bundle/bufexplorer"]
 	path = vim/bundle/bufexplorer
-	url = git@github.com:jlanzarotta/bufexplorer.git
+	url = https://github.com/jlanzarotta/bufexplorer.git
 [submodule "vim/bundle/ag.vim"]
 	path = vim/bundle/ag.vim
-	url = git@github.com:rking/ag.vim.git
+	url = https://github.com/rking/ag.vim.git
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
@@ -102,7 +102,10 @@
 	url = https://github.com/Yggdroot/indentLine.git
 [submodule "vim/bundle/js-syntax"]
 	path = vim/bundle/js-syntax
-	url = git@github.com:othree/javascript-libraries-syntax.vim.git
+	url = https://github.com/othree/javascript-libraries-syntax.vim.git
 [submodule "vim/bundle/emmet-vim"]
 	path = vim/bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
+[submodule "vim/bundle/yajs"]
+	path = vim/bundle/yajs
+	url = https://github.com/othree/yajs.vim.git
