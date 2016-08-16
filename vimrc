@@ -408,11 +408,11 @@ vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader> <Plug>(EasyAlign)
 
 " set colorscheme
-colorscheme molokai
-" set background=dark
+colorscheme solarized
+set background=dark
 
 " Airline configuration
-let g:airline_theme="badwolf"
+let g:airline_theme="solarized"
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tmuxline#enabled = 1
 
@@ -423,7 +423,25 @@ nnoremap <leader>. :CtrlPTag<cr>
 " set synmaxcol=120
 
 " Disable syntastic javascript checker
-let g:syntastic_javascript_checkers = ['']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " ES6 files
 au BufRead,BufNewFile *.es6 set ft=javascript
+
+" PostCSS with precss
+au BufRead,BufNewFile *.css set ft=scss
+
+" Seeing is believing
+augroup seeingIsBelievingSettings
+    autocmd!
+
+    autocmd FileType ruby nmap <buffer> <Enter>r <Plug>(seeing-is-believing-mark-and-run)
+    autocmd FileType ruby xmap <buffer> <Enter>r <Plug>(seeing-is-believing-mark-and-run)
+
+    autocmd FileType ruby nmap <buffer> <F4> <Plug>(seeing-is-believing-mark)
+    autocmd FileType ruby xmap <buffer> <F4> <Plug>(seeing-is-believing-mark)
+    autocmd FileType ruby imap <buffer> <F4> <Plug>(seeing-is-believing-mark)
+
+    autocmd FileType ruby nmap <buffer> <F5> <Plug>(seeing-is-believing-run)
+    autocmd FileType ruby imap <buffer> <F5> <Plug>(seeing-is-believing-run)
+augroup END

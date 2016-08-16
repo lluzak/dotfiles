@@ -9,7 +9,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="gentoo"
+ZSH_THEME="schminitz"
 
 # Example aliases # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -30,7 +30,7 @@ DISABLE_LS_COLORS="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
+DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
@@ -43,7 +43,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -58,12 +58,6 @@ export EDITOR=vim
 
 # Tmux
 alias tmux="tmux -2"
-
-# Chrome with disable web security
-alias dev_chrome="google-chrome --args=\"--disable-web-security\""
-
-# Set TERM variable
-# export TERM=screen-256color
 
 # This loads nvm
 [[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"

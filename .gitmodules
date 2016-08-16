@@ -112,3 +112,15 @@
 [submodule "vim/bundle/vim-airline-themes"]
 	path = vim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "vim/bundle/vim-elixir"]
+	path = vim/bundle/vim-elixir
+	url = https://github.com/elixir-lang/vim-elixir.git
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim/bundle/vim.seeing"]
+	path = vim/bundle/vim.seeing
+	url = https://github.com/hwartig/vim-seeing-is-believing
+[submodule "vim/bundle/typescript-vim"]
+	path = vim/bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git

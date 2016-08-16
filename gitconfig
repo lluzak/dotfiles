@@ -6,6 +6,7 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	undo-commit = reset --soft HEAD^
+	update = !git pull && git submodule update --init --recursive
 [core]
 	editor = vim
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
