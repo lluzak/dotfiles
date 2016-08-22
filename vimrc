@@ -434,6 +434,9 @@ au BufRead,BufNewFile *.es6 set ft=javascript
 " PostCSS with precss
 au BufRead,BufNewFile *.css set ft=scss
 
+" CtrlP
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|node_shrinkwrap)'
+
 " Seeing is believing
 augroup seeingIsBelievingSettings
     autocmd!
