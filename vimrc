@@ -423,7 +423,10 @@ nnoremap <leader>. :CtrlPTag<cr>
 " set synmaxcol=120
 
 " Disable syntastic javascript checker
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['eslint', 'tslint']
+
+" Enable checker for Typescript
+let g:syntastic_typescript_checkers = ['tslint']
 
 " ES6 files
 au BufRead,BufNewFile *.es6 set ft=javascript
