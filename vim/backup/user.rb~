@@ -1,0 +1,256 @@
+class User < ActiveRecord::Base
+  include MailingListable
+  include Currencyable
+  include UserAdminFilters
+  include UserRoles
+
+  asdsadasd
+
+  asdasd
+
+  ### Plugins ###
+  devise :database_authenticatable, :rememberable, :omniauthable, :recoverable
+
+  ### Associations ###
+  has_many :image_sets
+  has_many :slides
+  has_many :orders
+  has_many :payments, :through => :orders
+  has_many :line_items, :through => :orders
+  has_many :nudges, :through => :orders
+  has_many :addresses, :through => :orders
+  has_many :authorizations, :inverse_of => :user, :dependent => :destroy
+  has_and_belongs_to_many :promo_codes
+  has_many :comments
+
+  ### Validations ###
+  validates :email, :presence => true, :on => :create
+  validates_format_of :email, :with => Devise.email_regexp,
+    :allow_blank => true, :allow_nil => true
+  validates :email, :uniqueness => true
+  validates :password, :presence => true, :length => {:in => 5..128},
+    :if => :password_required?
+
+  ### Instance Methods ###
+  def basket
+    if (baskets = orders.cart).any?
+      cart = baskets.last
+      cart.update_currency(currency) if cart.currency.nil?
+      cart
+    else
+      orders.create(:currency => currency)
+    end
+  end
+
+  def update_currency!(new_currency)
+    if allow_currency_update?(new_currency)
+      update_attributes(:currency => new_currency)
+      basket.update_currency(new_currency)
+    end
+  end
+
+  def marketable?
+    Subscription.subscribed?(email)
+  end
+
+  def auth_hash
+    authorizations.inject({}) do |memo, auth|
+      memo[auth.provider] = auth.uid
+      memo
+    end
+  end
+
+  def update_authorization_for(omniauth)
+    auth = OmniauthPresenter.new(omniauth).auth_details
+
+    auths = Authorization.where(provider: auth['provider'], uid: auth['uid'])
+
+    if auths.size > 1
+      destroy_old_provider(auth['provider'])
+      auths.destroy_all
+    end
+
+    authorization = auths.first
+
+    if authorization
+      authorization.token = auth['token']
+      # user logs in with auth attached to diff user
+      # system gets into weird state and can't use that account if you logout
+      # this takes the presumption that this will be the account
+      if authorization.user_id != id
+        destroy_old_provider(auth['provider'])
+        authorization.user_id = id
+      end
+      authorization.save!
+    else
+      destroy_old_provider(auth['provider'])
+
+      authorizations.create(
+        uid:      auth['uid'],
+        provider: auth['provider'],
+        token:    auth['token'],
+        username: auth['username']
+      )
+    end
+  end
+
+  def update_relationships_allowed(provider, allowed)
+    authorization_for(provider).update_attribute(:relationships_allowed, allowed)
+  end
+
+  def can_be_updated_by?(user)
+    self == user
+  end
+
+  def authorization_for(provider)
+    return desktop_authorization if provider == 'desktop'
+    authorizations.where(:provider => provider).last
+  end
+
+  def external_providers
+    authorizations.select { |a| Authorization::AUTH_PROVIDERS.include? a.provider }
+  end
+
+  def clear_authorizations
+    authorizations.destroy_all
+  end
+
+  Authorization::AUTH_PROVIDERS.each do |provider|
+    define_method("#{provider}_authorization") do
+      authorization_for(provider)
+    end
+  end
+
+  def stamps_authorization
+    true
+  end
+
+  def desktop_authorization(uid=nil)
+    authorizations.find_or_create_by(provider: 'desktop') do |auth|
+      auth.uid      =  uid && auth.new_record? ? uid : SecureRandom.hex
+      auth.provider = 'desktop'
+      auth.token    = Authorization.generate_resizer_token(user_id: [auth.uid])
+      auth.username = "n/a"
+      auth.save
+    end
+  end
+
+  def allowed_to?(action, object=nil)
+    case action
+    when *ROLES
+      return true if self.super?
+      self.send(:"#{action}?")
+    when :show
+      object.valid? && object.can_be_shown_by?(self)
+    when :create
+      object.can_be_created_by?(self)
+    when :update
+      object.can_be_updated_by?(self)
+    when :destroy
+      object && object.can_be_destroyed_by?(self)
+    when :destroy_session
+      true
+    else
+      false
+    end
+  end
+
+  def to_s
+    email
+  end
+
+  def merge_vars
+    h = {
+      :tboxes     => total_boxes,
+      :torders    => total_orders,
+      :country    => country_of_residence.to_s,
+    }
+    h[:forder] = first_order_date.strftime("%Y-%m-%d") if first_order_date
+    h[:lorder] = last_order_date.strftime("%Y-%m-%d") if last_order_date
+    h
+  end
+
+  def unsubscribe_email!
+    update_attribute(:on_mailing_list, false)
+  end
+
+  # Devise options to use Rails 4.2 ActiveJob. This is literally copied from
+  # the readme so I will not test this.
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
+
+  def repeat_customer?(before = Time.now)
+    orders.not_free.confirmed.where('orders.confirmed_at <= ?', before).
+      uniq.count > 1
+  end
+
+  # See if the user has purchased before but not recently. This is to avoid
+  # rushed purchases (3 within 2 days) to see the bigger picture.
+  def long_term_repeat_customer?(before = Time.now)
+    return false unless repeat_customer?(before)
+
+    # The first number is the number you want to change. The second number is
+    # one day expressed in seconds.
+    repeat_time = 28 * 86400
+    dates = orders.not_free.confirmed.where('orders.confirmed_at <= ?', before).
+      uniq.last(2).map(&:confirmed_at)
+    dates.sort.reverse.inject(:-) > repeat_time
+  end
+
+  def active_customer?
+    return false if (last_order = orders.confirmed.last).nil?
+    last_order.confirmed_at >= 12.months.ago
+  end
+
+  # Purely for accounting purposes, we need to see when this user bought an
+  # order for the first time in a specific format.
+  def accounting_activation_date
+    return '' if (first_order = orders.confirmed.first).nil?
+    first_order.confirmed_at.strftime('%b-%Y').upcase
+  end
+
+  def can_see_buntella?
+    roles.collect(&:name).include?('buntella')
+  end
+
+  protected
+  # Taken from https://github.com/plataformatec/devise/blob/master/lib/devise/models/validatable.rb#L53
+  def password_required?
+    !persisted? || !password.nil? || !password_confirmation.nil?
+  end
+
+  private
+  # We do not wish the user to have more than one authorisation for a type
+  # of provider
+  def destroy_old_provider(provider)
+    authorizations.where(provider: provider).destroy_all
+  end
+
+  def allow_currency_update?(new_currency)
+    (currency.blank? || currency != new_currency) &&
+      Currency.find_by(:currency => new_currency).present?
+  end
+
+  def total_boxes
+    orders.confirmed.map {|o| o.image_set_packages.count}.inject(0) {|r,i| r + i}
+  end
+
+  def total_orders
+    orders.confirmed.count
+  end
+
+  def first_order_date
+    orders.confirmed.any? ? orders.confirmed.first.confirmed_at : nil
+  end
+
+  def last_order_date
+    orders.confirmed.any? ? orders.confirmed.last.confirmed_at : nil
+  end
+
+  def country_of_residence
+    last_order = orders.confirmed.last
+    last_order.address.country if last_order.present? && last_order.address
+  end
+
+end
