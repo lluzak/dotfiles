@@ -215,7 +215,7 @@ if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
 
-    colorscheme solarized
+    colorscheme molokai
     set guitablabel=%M%t
     set lines=40
     set columns=115
@@ -403,11 +403,11 @@ vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader> <Plug>(EasyAlign)
 
 " set colorscheme
-colorscheme solarized
-set background=dark
+colorscheme lucario
+" set background=light
 
 " Airline configuration
-let g:airline_theme="solarized"
+let g:airline_theme="base16"
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tmuxline#enabled = 1
 

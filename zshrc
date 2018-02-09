@@ -43,7 +43,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -53,11 +53,15 @@ unsetopt correct_all
 # Customize to your needs...
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 
-# Default Editor
-export EDITOR=vim
 
 # Tmux
 alias tmux="tmux -2"
+
+# Vim
+alias vim="nvim"
+
+# Default Editor
+export EDITOR=nvim
 
 # This loads nvm
 [[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
@@ -80,3 +84,12 @@ export PATH="/home/przemek/.nw:$PATH"
 ## Adnroid SDK for OSX
 export ANDROID_HOME="/usr/local/Cellar/android-sdk/24.3.3"
 export ANDROID_SDK="/usr/local/Cellar/android-sdk/24.3.3"
+
+# BASE16_SHELL=$HOME/.config/base16-shell/
+#[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+# Java 1.8
+export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin"
+export PATH=${JAVA_HOME}:${PATH}
