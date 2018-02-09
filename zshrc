@@ -1,7 +1,3 @@
-# rbenv settings
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -53,7 +49,6 @@ unsetopt correct_all
 # Customize to your needs...
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 
-
 # Tmux
 alias tmux="tmux -2"
 
@@ -63,33 +58,10 @@ alias vim="nvim"
 # Default Editor
 export EDITOR=nvim
 
-# This loads nvm
-[[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-
-# GO Paths
-export GOPATH=$HOME/code/go
-export PATH=$HOME/code/go/bin:$PATH
-
-### Node.js
-export NODE_PATH=./:$NODE_PATH
-
-### nw.js
-export PATH="/home/przemek/.nw:$PATH"
-
-## Adnroid SDK for OSX
-export ANDROID_HOME="/usr/local/Cellar/android-sdk/24.3.3"
-export ANDROID_SDK="/usr/local/Cellar/android-sdk/24.3.3"
-
-# BASE16_SHELL=$HOME/.config/base16-shell/
-#[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-
-export PATH="$HOME/.yarn/bin:$PATH"
-
-# Java 1.8
-export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin"
-export PATH=${JAVA_HOME}:${PATH}
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

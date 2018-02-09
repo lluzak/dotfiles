@@ -11,34 +11,11 @@ install-submodules:
 install-nvm:
 	curl https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | bash
 
-install-vim:
-	hg clone https://vim.googlecode.com/hg/ ~/vim
-	mkdir ~/.tmp
-	cd ~/vim && ./configure --enable-rubyinterp --with-features=huge
-	cd ~/vim && sudo make install -j 8
-	ln -fs `pwd`/vimrc ~/.vimrc
-	ln -fs `pwd`/vim ~/.vim
-
-install-rbenv:
-	git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-
-install-ruby-build:
-	git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-
-install-zsh:
-	curl -L http://install.ohmyz.sh | sh
+linking:
 	ln -fs `pwd`/zshrc ~/.zshrc
-
-install-rubygems:
 	ln -fs `pwd`/gemrc ~/.gemrc
+	ln -fs `pwd`/gitconfig ~/.gitconfig
+	ln -fs `pwd`/oh-my-zsh/themes ~/.oh-my-zsh/custom/themes
 
 install-tmux:
 	ln -fs `pwd`/tmux.conf ~/.tmux.conf
-
-install-git:
-	ln -fs `pwd`/gitconfig ~/.gitconfig
-	mkdir -p ~/.git
-	ln -fs `pwd`/gitconfig ~/.git/config
-
-install-zsh-plugins:
-	ln -fs `pwd`/oh-my-zsh/plugins/prog_helper ~/.oh-my-zsh/custom/plugins
