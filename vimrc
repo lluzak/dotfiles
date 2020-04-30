@@ -61,7 +61,7 @@ if filereadable(expand("~/.vimrc_background"))
 endif
 " let base16colorspace=256
 colorscheme solarized
-set background=dark
+set background=light
 
 "indent settings
 set tabstop=2
